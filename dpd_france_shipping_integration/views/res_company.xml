@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dpd_fr_credential_configuration" model="ir.ui.view">
+        <field name="name">DPD France Configuration</field>
+        <field name="model">res.company</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page string="DPD France Configuration">
+                    <group>
+                        <group>
+                            <field name="use_dpd_fr_shipping_provider"/>
+                            <field name="dpd_fr_api_url"
+                                   attrs="{'invisible': [('use_dpd_fr_shipping_provider','=',False)],'required': [('use_dpd_fr_shipping_provider','!=',False)]}"/>
+                            <field name="dpd_fr_username"
+                                   attrs="{'invisible': [('use_dpd_fr_shipping_provider','=',False)],'required': [('use_dpd_fr_shipping_provider','!=',False)]}"/>
+                            <field name="dpd_fr_password"
+                                   attrs="{'invisible': [('use_dpd_fr_shipping_provider','=',False)],'required': [('use_dpd_fr_shipping_provider','!=',False)]}"/>
+                            <field name="dpd_fr_customer_number"
+                                   attrs="{'invisible': [('use_dpd_fr_shipping_provider','=',False)],'required': [('use_dpd_fr_shipping_provider','!=',False)]}"/>
+                            <field name="dpd_fr_center_number"
+                                   attrs="{'invisible': [('use_dpd_fr_shipping_provider','=',False)],'required': [('use_dpd_fr_shipping_provider','!=',False)]}"/>
+
+                        </group>
+                        <group>
+                            <field name="use_pickup_location"/>
+                            <field name="dpd_fr_carrier_id"
+                                   attrs="{'invisible': [('use_pickup_location','=',False)],'required': [('use_pickup_location','!=',False)]}"/>
+                            <field name="dpd_fr_key"
+                                   attrs="{'invisible': [('use_pickup_location','=',False)],'required': [('use_pickup_location','!=',False)]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
