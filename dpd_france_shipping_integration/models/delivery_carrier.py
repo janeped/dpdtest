@@ -6,7 +6,7 @@ import binascii
 from odoo.exceptions import ValidationError
 import xml.etree.ElementTree as etree
 from .dpd_request import DPDFranceRequest
-from .dpd_test_response import DPDTestResponse
+# from .dpd_test_response import DPDTestResponse
 
 
 class DPDDeliveryCarrier(models.Model):
